@@ -18,7 +18,7 @@ flowchart TD
         M5["Step 4: Review & Submit (Online / Offline SQLite Queue)"]
         M6["Field Officer Spot Audit Mode (GPS Check-In + Split Compare)"]
         M1 --> M2 --> M3 --> M4 --> M5
-    end 
+    end
 
     subgraph Backend["⚙️ Local OTP & Backend Server (:5000)"]
         direction TB
