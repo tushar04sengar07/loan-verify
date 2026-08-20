@@ -133,7 +133,7 @@ npm run web
 
 | Mobile Number | Beneficiary Name | District, State | Scheme / Asset Category | Sanctioned Amount |
 |---|---|---|---|---|
-| `9812345670` | Ramesh Patil | Pune, Maharashtra | Dairy Cattle (Milch Animal) | ₹1,80,000 |
+| `9812345670` | Himesh Patil | Pune, Maharashtra | Dairy Cattle (Milch Animal) | ₹1,80,000 |
 | `9812345671` | Sunita Sharma | Varanasi, Uttar Pradesh | Farm Mechanization (Tractor) | ₹5,50,000 |
 | `9812345672` | Kavitha Raman | Coimbatore, Tamil Nadu | PMMY Mudra (Sewing Machine) | ₹75,000 |
 | `9812345673` | Amit Verma | Jaipur, Rajasthan | PM-KUSUM (Solar Water Pump) | ₹2,20,000 |
