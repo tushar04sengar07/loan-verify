@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuth() { 
+      return request.auth != null; 
+    }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function role() { 
+      return isAuth() && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        ? getUserData().role 
+        : 'anonymous'; 
+    }
+    
+    function isBeneficiary() { 
+      return role() == 'beneficiary'; 
+    }
+    
+    function isOfficer() { 
+      return role() in ['fieldOfficer', 'stateOfficer']; 
+    }
+    
+    function isAdmin() { 
+      return role() in ['bankAdmin', 'superAdmin']; 
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      allow read: if isAuth() && (request.auth.uid == userId || isOfficer() || isAdmin());
+      allow write: if isAdmin() || (isAuth() && request.auth.uid == userId);
+    }
+
+    // Schemes Collection
+    match /schemes/{schemeId} {
+      allow read: if isAuth();
+      allow write: if isAdmin();
+    }
+
+    // Loans Collection
+    match /loans/{loanId} {
+      allow read: if isAuth() && (
+        resource.data.beneficiaryId == request.auth.uid || isOfficer() || isAdmin()
+      );
+      allow create, update: if isAdmin() || isOfficer();
+    }
+
+    // Submissions Collection
+    match /submissions/{submissionId} {
+      allow read: if isAuth() && (
+        resource.data.beneficiaryId == request.auth.uid || isOfficer() || isAdmin()
+      );
+      allow create: if isAuth() && (
+        isBeneficiary() || isOfficer() || isAdmin()
+      );
+      allow update: if isOfficer() || isAdmin() || (
+        isBeneficiary() && resource.data.beneficiaryId == request.auth.uid
+      );
+    }
+
+    // Audit Log Collection
+    match /auditLog/{logId} {
+      allow read: if isOfficer() || isAdmin();
+      allow create: if isAuth();
+      allow update, delete: if false; // Immutable append-only audit trail
+    }
+
+    // Sync Queue (per device / user)
+    match /syncQueue/{deviceId}/{queueItemId} {
+      allow read, write: if isAuth();
+    }
+  }
+}
