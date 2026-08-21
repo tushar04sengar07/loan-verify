@@ -137,7 +137,7 @@ npm run web
 | `9812345671` | Sunita Sharma | Varanasi, Uttar Pradesh | Farm Mechanization (Tractor) | ₹5,50,000 |
 | `9812345672` | Kavitha Raman | Coimbatore, Tamil Nadu | PMMY Mudra (Sewing Machine) | ₹75,000 |
 | `9812345673` | Amit Verma | Jaipur, Rajasthan | PM-KUSUM (Solar Water Pump) | ₹2,20,000 |
-| `9812345674` | Rajesh Paswan | Patna, Bihar | Dairy Cattle (Milch Animal) | ₹1,60,000 |
+| `9812345674` | Ramesh Paswan | Patna, Bihar | Dairy Cattle (Milch Animal) | ₹1,60,000 |
 | `9812345675` | Meera Devi | Pune, Maharashtra | PMMY Mudra (Sewing Machine) | ₹85,000 |
 | `9812345676` | Harpreet Singh | Ludhiana, Punjab | Farm Mechanization (Tractor) | ₹6,00,000 |
 | `9812345677` | Bhavik Patel | Ahmedabad, Gujarat | Electric Cargo Vehicle (PM e-Drive) | ₹3,20,000 |
