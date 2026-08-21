@@ -144,7 +144,7 @@ npm run web
 | `9812345678` | Manjunath Gowda | Bengaluru Rural, Karnataka | Drip Irrigation System (PMKSY) | ₹1,40,000 |
 | `9812345679` | Dipankar Saikia | Kamrup, Assam | Fish Farming Unit (PMMSY) | ₹4,50,000 |
 | `9812345680` | Raghuveer Yadav | Indore, Madhya Pradesh | Micro Cold Storage (NABARD) | ₹8,50,000 |
-| `9812345681` | Thomas Kurian | Ernakulam, Kerala | Fish Farming Unit (PMMSY) | ₹4,80,000 |
+| `9812345681` | Vedhu Gopal | Ernakulam, Kerala | Fish Farming Unit (PMMSY) | ₹4,80,000 |
 | `9812345682` | Jayanti Behera | Khordha, Odisha | Beekeeping & Honey Unit (NBHM) | ₹1,80,000 |
 
 ### Officers Roster:
